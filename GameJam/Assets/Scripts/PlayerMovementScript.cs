@@ -19,7 +19,7 @@ public class PlayerMovementScript : MonoBehaviour
     float velocidad;
     //fuerza del salto
     [SerializeField]
-    int forceJump;
+    public int jumpForce;
     //Hice esta para saber si está en el suelo
     bool isGrounded;
     bool isRunning;
@@ -104,7 +104,7 @@ public class PlayerMovementScript : MonoBehaviour
         //Saltar sin mas si no esta activado el salto feature
         if (isGrounded && Input.GetButtonDown("Jump") && !ActiveHeldJump)
         {
-            rb.velocity = new Vector3(rb.velocity.x, forceJump, 0);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce, 0);
         }
         //Manejo del salto feature
         if (JumpPressed)
@@ -130,7 +130,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         //para que siga subiendo cuando saltó
         rb.gravityScale = 0;
-        rb.AddForce(new Vector2(0, forceJump), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         JumpPressed = false;
         startTimer = true;
     }

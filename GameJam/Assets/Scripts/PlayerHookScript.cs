@@ -12,9 +12,10 @@ public class PlayerHookScript : MonoBehaviour
     //Como lo tenemos pensado, el gancho estará en el mapa y solo si está dentro del rango del gancho
     //podrá aderirse a él
     [SerializeField]
-    public GameObject puntoGancho;
+    public List<GameObject> puntosGancho;
     [Header("PlayerHookParams")]
     [SerializeField]
+    //Necesito saber si tiene dentro del rango un gancho
     private bool IsHooking;
     private LineRenderer lineRenderer;
     // Start is called before the first frame update
@@ -37,8 +38,21 @@ public class PlayerHookScript : MonoBehaviour
     private void CheckHookPoint()
     {
         //Mientras tenga un punto gancho asignado
-        if (puntoGancho != null)
+        if (puntosGancho.Count > 0)
         {
+            //Mientras hayan ganchos en la lista de ganchos hay que escoger el mas cercano
+            GameObject puntoGancho = new GameObject();
+            //Para comparar ganchos
+            float lastDistance = float.MaxValue;
+            foreach (var gancho in puntosGancho)
+            {
+                float currDistance = Vector2.Distance(gancho.transform.position, transform.position);
+                if (currDistance < lastDistance)
+                {
+                    puntoGancho = gancho;
+                    lastDistance = currDistance;
+                }
+            }
             //Obtenemos el distancejoint
             DistanceJoint2D dJ = GetComponent<DistanceJoint2D>();
             //Si le da a la tecla del gancho
@@ -50,6 +64,8 @@ public class PlayerHookScript : MonoBehaviour
                 lineRenderer.enabled = true;
                 //Asignamos el punto del gancho al distance joint
                 dJ.connectedBody = puntoGancho.GetComponent<Rigidbody2D>();
+                //Asignamos la distancia de la "cuerda"
+                dJ.distance = Vector2.Distance(puntoGancho.transform.position, transform.position);
                 //Activamos el booleano is hooking
                 IsHooking = true;
                 //el inicio y el fin del line renderer serán, tu posicion y la de el punto del gancho, respectivamente
@@ -67,6 +83,8 @@ public class PlayerHookScript : MonoBehaviour
                     dJ.enabled = false;
                     lineRenderer.enabled = false;
                     IsHooking = false;
+                    //Dar un "salto" al soltar la cuerda
+                    GetComponent<Rigidbody2D>().velocity = new Vector3(GetComponent<Rigidbody2D>().velocity.x, GetComponent<PlayerMovementScript>().jumpForce, 0);
                 }
             }
         }
