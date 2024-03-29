@@ -41,13 +41,14 @@ public class PlayerHookScript : MonoBehaviour
         if (puntosGancho.Count > 0)
         {
             //Mientras hayan ganchos en la lista de ganchos hay que escoger el mas cercano
-            GameObject puntoGancho = new GameObject();
+            GameObject puntoGancho = null;
             //Para comparar ganchos
             float lastDistance = float.MaxValue;
             foreach (var gancho in puntosGancho)
             {
+                HookPointScript ganchoScript = gancho.GetComponent<HookPointScript>();
                 float currDistance = Vector2.Distance(gancho.transform.position, transform.position);
-                if (currDistance < lastDistance)
+                if (currDistance < lastDistance && ganchoScript.hookable)
                 {
                     puntoGancho = gancho;
                     lastDistance = currDistance;
@@ -56,7 +57,7 @@ public class PlayerHookScript : MonoBehaviour
             //Obtenemos el distancejoint
             DistanceJoint2D dJ = GetComponent<DistanceJoint2D>();
             //Si le da a la tecla del gancho
-            if (Input.GetKeyDown(HookKey)) 
+            if (Input.GetKeyDown(HookKey) && puntoGancho.GetComponent<HookPointScript>().hookable) 
             {
                 //como le dio a la tecla y tinene un punto gancho cerca entonces activamos el gancho
                 dJ.enabled = true;
@@ -84,7 +85,15 @@ public class PlayerHookScript : MonoBehaviour
                     lineRenderer.enabled = false;
                     IsHooking = false;
                     //Dar un "salto" al soltar la cuerda
-                    GetComponent<Rigidbody2D>().velocity = new Vector3(GetComponent<Rigidbody2D>().velocity.x, GetComponent<PlayerMovementScript>().jumpForce, 0);
+                    //GetComponent<Rigidbody2D>().velocity = new Vector3(GetComponent<Rigidbody2D>().velocity.x, GetComponent<PlayerMovementScript>().jumpForce, 0);
+                }
+            }
+            //Si ya no se esta columpiando limpiamos la lista de ganchos
+            if (!IsHooking)
+            {
+                foreach (var gancho in puntosGancho)
+                {
+                    gancho.GetComponent<HookPointScript>().added = false;
                 }
             }
         }
