@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Hookeable
+  - Boss
   layers:
   - Default
   - TransparentFX

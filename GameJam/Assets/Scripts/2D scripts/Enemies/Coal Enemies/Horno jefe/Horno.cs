@@ -121,7 +121,6 @@ public class Horno : MonoBehaviour
     {
         while (curandose)
         {
-            Debug.LogError("aaaaaaa");
             int random = Random.Range(1, 3);
             if (random == 1)
             {
