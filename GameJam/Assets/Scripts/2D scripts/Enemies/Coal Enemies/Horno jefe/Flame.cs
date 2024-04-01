@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Flame : MonoBehaviour
 {
+    // luego arreglo esto perdon
     Vector2 positionToFall;
     float speed;
     Collider2D collider2d;
     int layerSuelo;
     bool colocado;
 
+    [SerializeField] float limLeft;
+    [SerializeField] float limRight;
+    float radio;
+    GameObject player;
+
     public float Speed { get => speed; set { speed = value; } }
     public Vector2 PositionToFall { get => positionToFall; set { positionToFall = value; } }
 
     public float limitUpper { get; set; }
 
-    float direccionX;
 
     private void Start()
     {
@@ -46,6 +51,7 @@ public class Flame : MonoBehaviour
         {
             if(!colocado)
             {
+                SetLandingPoint();
                 transform.position = new Vector3(positionToFall.x, transform.position.y, transform.position.z);
                 colocado = true;
                 Debug.Log("colocando");
@@ -56,6 +62,22 @@ public class Flame : MonoBehaviour
                 transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
             }
         }
+    }
+
+    public void SetLandingLimits(float limiteDisparoIzquierdo, float limiteDisparoDerecho, float radio, GameObject player)
+    {
+        limLeft = limiteDisparoIzquierdo;
+        limRight = limiteDisparoDerecho;
+        this.radio = radio;
+        this.player = player;
+
+    }
+
+    private void SetLandingPoint()
+    {
+        float limiteDisparoIzquierdo = player.transform.position.x - radio <= limLeft ? limLeft : player.transform.position.x - radio;
+        float limiteDisparoDerecho = player.transform.position.x + radio >= limRight ? limRight : player.transform.position.x;
+        PositionToFall = new Vector2(Random.Range(limiteDisparoIzquierdo, limiteDisparoDerecho), 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

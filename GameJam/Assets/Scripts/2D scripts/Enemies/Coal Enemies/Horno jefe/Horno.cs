@@ -34,6 +34,7 @@ public class Horno : MonoBehaviour
     [SerializeField] float limLeft;
     [SerializeField] float limRight;
     [SerializeField] float limUpper;
+    [SerializeField] float radio;
 
     [Header("Curarse")]
     [SerializeField] float limBottom;
@@ -230,12 +231,18 @@ public class Horno : MonoBehaviour
 
     public IEnumerator HacerTiros()
     {
-        
+
         for (int i = 0; i < numberOfFlames; i++)
         {
             GameObject objeto = Instantiate(flame, transform.position, Quaternion.identity);
             objeto.GetComponent<Flame>().Speed = flameSpeed;
-            objeto.GetComponent<Flame>().PositionToFall = new Vector2(Random.Range(limLeft, limRight), limBottom);
+
+            //float limiteDisparoIzquierdo = player.transform.position.x - radio <= limLeft ? limLeft : player.transform.position.x - radio;
+            //float limiteDisparoDerecho = player.transform.position.x + radio >= limRight ? limRight : player.transform.position.x;
+
+            //objeto.GetComponent<Flame>().PositionToFall = new Vector2(Random.Range(limiteDisparoIzquierdo, limiteDisparoDerecho), limBottom);
+
+            objeto.GetComponent<Flame>().SetLandingLimits(limLeft, limRight, radio, player);
             objeto.GetComponent<Flame>().limitUpper = limUpper;
             yield return new WaitForSeconds(0.1f);
         }

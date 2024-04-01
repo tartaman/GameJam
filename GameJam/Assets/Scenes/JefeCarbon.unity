@@ -2206,6 +2206,7 @@ MonoBehaviour:
   limLeft: -12.04
   limRight: 11.99
   limUpper: 6
+  radio: 6
   limBottom: -3.43
   carbonCurador: {fileID: 1111959459}
   tiempoEntreGenerarCarbon: 3
