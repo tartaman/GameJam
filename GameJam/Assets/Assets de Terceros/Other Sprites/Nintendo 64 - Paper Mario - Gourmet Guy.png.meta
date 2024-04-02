@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 3333c261bf9b3974292f9d025bf07523
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 495
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb729e3fed4d244492b49cffac6053b
+      internalID: -1964217117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 495
+        width: 118
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eac0fa09f01c5d44804be209bc11b7c
+      internalID: -1916102273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_2
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 496
+        width: 115
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d42dde5edc07854e9c28d899f340b67
+      internalID: 1234025664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_3
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 495
+        width: 115
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672a22c0fa0161247b56a0be563cbdf9
+      internalID: 1526618695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 383
+        width: 91
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec75d0869aaf444d82e50fc3278d64f
+      internalID: -1732243328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_5
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 383
+        width: 115
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fafb5fefe7afb4f9864d32e429f577
+      internalID: 1302669599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_6
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 383
+        width: 105
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19f2a7fa31cdec4b8b5442252ae4e6a
+      internalID: 1926955774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_7
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 383
+        width: 105
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9a4c75b9597a74f8f7dfa1be18febc
+      internalID: 350961959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 268
+        width: 97
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4d42fed09e2c54db3175aa219c20ac
+      internalID: -266422586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_9
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 255
+        width: 121
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22177c35c54c7da43b5564a1828f2a4a
+      internalID: -971598639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_10
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 264
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3603fd6ae5f5c46a018d010f7fd020
+      internalID: -1151104764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_11
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 266
+        width: 102
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8038abec62113e84ba2af2696e58c04c
+      internalID: 1479501279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 143
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a805faa825d874884669a5488e6e2d
+      internalID: 460471983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_13
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 143
+        width: 109
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbe7122a52c62541a2fb403caff09ec
+      internalID: 1359439745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_14
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 143
+        width: 109
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b99197784d3c0498ce11d9078adc0f
+      internalID: 764840280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_15
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 143
+        width: 114
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b234cff6c16ac445b6d30f08c1311fd
+      internalID: -13818642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 31
+        width: 112
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c489ab80b7b9f479d1fcc535e81843
+      internalID: 2140873448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 31
+        width: 106
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4a8d28f11818949b6a17a9eb4d69fd
+      internalID: -1225979471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_18
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 31
+        width: 114
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b24a71304b771a498a10bcb49f61bb9
+      internalID: -703125199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_19
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 101
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3708f31c2b53441a2f2ed054d397e6
+      internalID: 1658379354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nintendo 64 - Paper Mario - Gourmet Guy_20
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 95
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 886018c7f64ba7e42b4ee1a0b700739a
+      internalID: -622336466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Nintendo 64 - Paper Mario - Gourmet Guy_0: -1964217117
+      Nintendo 64 - Paper Mario - Gourmet Guy_1: -1916102273
+      Nintendo 64 - Paper Mario - Gourmet Guy_10: -1151104764
+      Nintendo 64 - Paper Mario - Gourmet Guy_11: 1479501279
+      Nintendo 64 - Paper Mario - Gourmet Guy_12: 460471983
+      Nintendo 64 - Paper Mario - Gourmet Guy_13: 1359439745
+      Nintendo 64 - Paper Mario - Gourmet Guy_14: 764840280
+      Nintendo 64 - Paper Mario - Gourmet Guy_15: -13818642
+      Nintendo 64 - Paper Mario - Gourmet Guy_16: 2140873448
+      Nintendo 64 - Paper Mario - Gourmet Guy_17: -1225979471
+      Nintendo 64 - Paper Mario - Gourmet Guy_18: -703125199
+      Nintendo 64 - Paper Mario - Gourmet Guy_19: 1658379354
+      Nintendo 64 - Paper Mario - Gourmet Guy_2: 1234025664
+      Nintendo 64 - Paper Mario - Gourmet Guy_20: -622336466
+      Nintendo 64 - Paper Mario - Gourmet Guy_3: 1526618695
+      Nintendo 64 - Paper Mario - Gourmet Guy_4: -1732243328
+      Nintendo 64 - Paper Mario - Gourmet Guy_5: 1302669599
+      Nintendo 64 - Paper Mario - Gourmet Guy_6: 1926955774
+      Nintendo 64 - Paper Mario - Gourmet Guy_7: 350961959
+      Nintendo 64 - Paper Mario - Gourmet Guy_8: -266422586
+      Nintendo 64 - Paper Mario - Gourmet Guy_9: -971598639
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
