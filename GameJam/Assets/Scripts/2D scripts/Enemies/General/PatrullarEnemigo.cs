@@ -12,38 +12,35 @@ public class PatrullarEnemigo : MonoBehaviour
     Vector3 pointLeft;
     [SerializeField]
     Vector3 pointRight;
-    [SerializeField] private Vector3 startPoint;
+    //[SerializeField] private Vector3 startPoint;
 
     [Header("Estadísticas")]
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
 
-    /*
-    [Header("Referencias")]
-    // Vector 2 que se le debe agregar a la posición actual para tener la posición de un collider que detecte obstaculos
-    [SerializeField] Vector2 colliderAgregator;
-    // Vector 2 que indica el tamaño del collider que detecta obstaculos
-    [SerializeField] Vector2 colliderSize;
-    // Layermask de lo que debe saltar
-    [SerializeField] LayerMask colliderLayerMaskJump;
-    */
     [Header("Salto")]
     [SerializeField]LayerMask layerSuelo;
     Rigidbody2D rb;
     Collider2D c2D;
+    Animator animator;
 
     [Header("Opcionales")]
     [SerializeField] bool stopPatrolingWhenPlayerNear = false;
     [SerializeField] float rangeToStop;
-    [SerializeField] GameObject player;
 
+    GameObject player;
     bool goingLeft = false;
     bool isCollider;
+    public bool canPatrol;
 
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         c2D = GetComponent<Collider2D>();
+        TryGetComponent<Animator>(out animator);
+        canPatrol = true;
+        
     }
 
     void Update()
@@ -51,17 +48,17 @@ public class PatrullarEnemigo : MonoBehaviour
         if(stopPatrolingWhenPlayerNear)
         {
             float distance = Vector2.Distance(player.transform.position, transform.position);
-            if(distance >= rangeToStop)
-            {
-                Debug.Log("Patrullando");
+            if(distance >= rangeToStop && canPatrol)
+            {   
+               
                 patrullar();
             }
 
         }
         else
         {
-            Debug.Log("Patrullando");
-            patrullar();
+            if (canPatrol)
+                patrullar();
         }
     }
 
@@ -88,6 +85,11 @@ public class PatrullarEnemigo : MonoBehaviour
         {
             transform.position += (Vector3)new Vector2(x: 1 * speed * Time.deltaTime, y: 0);
 
+        }
+        if(animator != null)
+        {
+            animator.speed = 1;
+            animator.SetBool("running", true);
         }
     }
 

@@ -12,10 +12,12 @@ public class PerseguirEnemigo : MonoBehaviour
     [SerializeField] protected float distanciaParaPerseguir;
     protected GameObject player;
     protected bool canFollow = true;
+    protected PatrullarEnemigo patrolControler;
      
     protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        TryGetComponent<PatrullarEnemigo>(out patrolControler);
         
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,26 +9,103 @@ public class EnemigoSuicida : PerseguirEnemigo
     
     //[SerializeField] float timeToAttack;
     [SerializeField] float attackSpeed;
+    [SerializeField] float runningAnimationSpeed;
+    [SerializeField] float timeToGetTired;
+    [SerializeField] float timeResting;
+
     //[SerializeField] float levantamiento;
     //[SerializeField] float levantamientoSpeed;
-    bool atacando;
-    Rigidbody2D r2D;
 
-    float timerToAttack;
+    Animator animator;
+    float timerToRest;
+    bool resting;
 
     protected override void Awake()
     {
         base.Awake();
-        r2D = GetComponent<Rigidbody2D>();
+        TryGetComponent<Animator>(out animator);
     }
 
     public override void atacar()
     {
-        Vector2 direccion = player.transform.position - transform.position;
-        direccion.Normalize();
-        //Debug.Log("Atacando");
-        transform.position += new Vector3(direccion.x * attackSpeed * Time.deltaTime, 0, 0);
+        timerToRest += Time.deltaTime;
+        Debug.Log(timerToRest);
+        if(timerToRest < timeToGetTired) {
+            Vector2 direccion = player.transform.position - transform.position;
+            direccion.Normalize();
+            transform.position += new Vector3(direccion.x * attackSpeed * Time.deltaTime, 0, 0);
 
+            if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                //Debug.Log("Derecha");
+            }
+            else if (player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
+            {
+                transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                //Debug.Log("Izquierda");
+            }
+
+            if (animator != null)
+            {
+                animator.speed = runningAnimationSpeed;
+            }
+        }
+        else
+        {
+            if(!resting)
+            {
+                
+                StartCoroutine(Rest());
+            }
+        }
+        
+
+    }
+
+    IEnumerator Rest()
+    {
+        Debug.Log("Se canso");
+        resting = true;
+        float originalSpeed = speed;
+        speed = 0;
+
+        animator.speed = 1;
+
+        if (animator != null) {
+            animator.SetBool("tired", true);
+        }
+
+        patrolControler.canPatrol = false;
+        
+        yield return new WaitForSeconds(timeResting);
+
+        
+        speed = originalSpeed;
+        if (animator != null)
+        {
+            animator.SetBool("tired", false);
+        }
+        patrolControler.canPatrol = true;
+        timerToRest = 0;
+        resting = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /*
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if(animator != null)
+            {
+                canFollow = false;
+                patrolControler.canPatrol = false;
+
+                animator.SetTrigger("suicided");
+                
+            }
+        }
+        */
     }
 
     /*
