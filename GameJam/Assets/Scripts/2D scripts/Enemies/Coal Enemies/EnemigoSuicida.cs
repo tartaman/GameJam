@@ -38,12 +38,10 @@ public class EnemigoSuicida : PerseguirEnemigo
             if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
             {
                 transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Derecha");
             }
             else if (player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
             {
                 transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Izquierda");
             }
 
             if (animator != null)
