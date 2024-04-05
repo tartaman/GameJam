@@ -6,6 +6,7 @@ public class TPFD_PlayerController : MonoBehaviour
 {
     [Header("Player Keybinds")]
     public KeyCode Jump = KeyCode.Space;
+    public KeyCode Talk = KeyCode.E;
 
     [Header("Player Components")]
     public Rigidbody RB;
@@ -22,6 +23,8 @@ public class TPFD_PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     public Transform groundPoint;
     public bool isGrounded;
+    public bool isControllable;
+    public bool isTalking;
 
     [Header("Movement Checks")]
     public bool isMovingBackwards;
@@ -29,14 +32,22 @@ public class TPFD_PlayerController : MonoBehaviour
     void Start()
     {
         RB = this.GetComponent<Rigidbody>();
+        isControllable = true;
     }
 
     void Update()
     {
+        isControllable = !isTalking;
+
+        if (!isControllable) RB.velocity = Vector3.zero;
+
         //Declares both moveInputs and normalize to preven diagonal movement boost.
-        moveInput.x = Input.GetAxis("Horizontal");
-        moveInput.y = Input.GetAxis("Vertical");
-        moveInput.Normalize();
+        if(isControllable)
+        {
+            moveInput.x = Input.GetAxis("Horizontal");
+            moveInput.y = Input.GetAxis("Vertical");
+            moveInput.Normalize();
+        }
 
         //We use the moveInput.y as out Z axis indicator, mantaining the velocity that the RB already has on the y axis.
         RB.velocity = new Vector3(moveInput.x * moveSpeed, RB.velocity.y, moveInput.y * moveSpeed);
