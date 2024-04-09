@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,14 +18,17 @@ public class GolemScript : PerseguirEnemigo
     [SerializeField] LayerMask suelo;
 
     bool atacando;
+    Animator animator;
 
     protected override void Awake()
     {
         base.Awake();
+        rotateWhileAttacking = false;
         for (int i = 0; i < Piedras.Length; i++)
         {
             Piedras[i].SetActive(false);
         }
+        TryGetComponent(out animator);
     }
 
     public override void atacar()
@@ -37,7 +41,22 @@ public class GolemScript : PerseguirEnemigo
 
     public IEnumerator LanzarPiedras()
     {
+        if (animator != null)
+            animator.SetBool("attacking", true);
         atacando = true;
+        patrolControler.canPatrol = false;
+
+        if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            //Debug.Log("Derecha");
+        }
+        else if (player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
+        {
+            transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            //Debug.Log("Izquierda");
+        }
+
         float timeToMoveAgain = timeBetweenCreatingRocks * (Piedras.Length -1) + timeToDestroyRocks * Piedras.Length;
         float originalSpeed = speed;
         StartCoroutine(EsperarParaMoverse(timeToMoveAgain, originalSpeed));
@@ -54,6 +73,7 @@ public class GolemScript : PerseguirEnemigo
 
             if (Physics2D.OverlapCircle(Piedras[i].transform.position +  puntoReal, 0.2f, suelo))
             {
+
                 Piedras[i].SetActive(true);
                 StartCoroutine(DesaparecerPiedra(Piedras[i]));
             }
@@ -64,15 +84,20 @@ public class GolemScript : PerseguirEnemigo
 
     private IEnumerator EsperarParaMoverse(float tiempo, float originalSpeed)
     {
+        
         yield return new WaitForSeconds(tiempo);
+        if (animator != null)
+            animator.SetBool("attacking", false);
         speed = originalSpeed;
         atacando = false;
-        
+        patrolControler.canPatrol = true;
+
     } 
 
     private IEnumerator DesaparecerPiedra(GameObject piedra)
     {
         yield return new WaitForSeconds(timeToDestroyRocks);
         piedra.SetActive(false);
+       
     }
 }

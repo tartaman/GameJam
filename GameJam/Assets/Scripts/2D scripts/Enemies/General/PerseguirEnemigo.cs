@@ -13,9 +13,11 @@ public class PerseguirEnemigo : MonoBehaviour
     protected GameObject player;
     protected bool canFollow = true;
     protected PatrullarEnemigo patrolControler;
+    protected bool rotateWhileAttacking;
      
     protected virtual void Awake()
     {
+        rotateWhileAttacking = true;
         player = GameObject.FindGameObjectWithTag("Player");
         TryGetComponent<PatrullarEnemigo>(out patrolControler);
         
@@ -43,19 +45,23 @@ public class PerseguirEnemigo : MonoBehaviour
         {
             Vector2 direccion = player.transform.position - transform.position;
 
-           // Debug.Log($"Player X{player.transform.position.x}");
+            // Debug.Log($"Player X{player.transform.position.x}");
             //Debug.Log($"Enemy X{transform.position.x}");
             //Debug.Log("Atacando");
-            if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+            if (rotateWhileAttacking)
             {
-                transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Derecha");
+                if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    //Debug.Log("Derecha");
+                }
+                else if (player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
+                {
+                    transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    //Debug.Log("Izquierda");
+                }
             }
-            else if(player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
-            {
-                transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Izquierda");
-            }
+           
             direccion.Normalize();
             transform.position += new Vector3(direccion.x * speed * Time.deltaTime,0,0);
             
