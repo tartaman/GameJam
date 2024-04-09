@@ -71,7 +71,9 @@ public class GolemScript : PerseguirEnemigo
                 puntoReal.x = puntosCheckeoBorde[i].x * -1;
             }
 
-            if (Physics2D.OverlapCircle(Piedras[i].transform.position +  puntoReal, 0.2f, suelo))
+          
+
+            if (Physics2D.OverlapCircle(transform.position +  puntoReal, 0.2f, suelo))
             {
 
                 Piedras[i].SetActive(true);
