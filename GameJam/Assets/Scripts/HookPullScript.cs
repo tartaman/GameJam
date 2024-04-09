@@ -17,7 +17,8 @@ public class HookPullScript : MonoBehaviour
     [SerializeField]
     //Valor de 0 a 1 para balancear la pullforce
     private float pullForceBalancer;
-
+    //isShooting para saber cuando mostrar la cuerda
+    bool isShooting;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,9 +60,10 @@ public class HookPullScript : MonoBehaviour
         {
             StartCoroutine(shoot());
         }
-        if (timer >= HookShowDelay * 0.2f)
+        if (timer >= HookShowDelay * 0.2f && isShooting)
         {
             lineRenderer.enabled = false;
+            isShooting = false;
         }
     }
     IEnumerator shoot()
@@ -69,7 +71,7 @@ public class HookPullScript : MonoBehaviour
         timer = 0f;
         Debug.Log("dispara");
         yield return new WaitForSeconds(0f);
-
+        isShooting = true;
         lineRenderer.enabled = true;
 
         Vector2 mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
