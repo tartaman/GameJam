@@ -88,6 +88,14 @@ public class PlayerMovementScript : MonoBehaviour
         {
             transform.Translate(HzM * velocidad * Time.deltaTime, 0, 0);
         }
+        if (HzM > 0)
+        {
+            transform.localScale = new Vector2(1,1);
+        }
+        if (HzM < 0)
+        {
+            transform.localScale = new Vector2(-1,1);
+        }
     }
     //Saltar, checamos si está en el suelo y le da al boton de saltar
     private void CheckJump()
