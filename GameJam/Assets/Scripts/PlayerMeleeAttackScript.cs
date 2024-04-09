@@ -31,12 +31,13 @@ public class PlayerMeleeAttackScript : MonoBehaviour
         //Detect Enemies inside of attack range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         //Deal damage to the enemies
-        foreach (IDamageable enemy in hitEnemies)
+        foreach (Collider2D enemyCollider in hitEnemies)
         {
-            if (enemy != null)
+            EnemyHealth enemyHealth = enemyCollider.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
             {
                 //Hacerle daño
-                enemy.takeDamage(meeleDamage);
+                enemyHealth.Damage(meeleDamage);
             }
             
         }

@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Hookeable
   - Boss
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Pullable
-  - 
+  - Enemies
   - Ground
   - 
   - 
