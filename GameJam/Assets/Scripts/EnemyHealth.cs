@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void Die()
     {
         rb.velocity = Vector3.zero;
-        animator.SetBool("Death", true);
+        //animator.SetBool("Death", true);
 
         Destroy(gameObject,1.5f);
     }
