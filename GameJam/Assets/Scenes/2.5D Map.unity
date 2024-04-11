@@ -962,7 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68664895}
   m_Layer: 0
-  m_Name: 'Water Ruined Level 2 '
+  m_Name: WaterAssets2ndUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,7 +1817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 126352839}
   m_Layer: 0
-  m_Name: Water Ruined Boss
+  m_Name: WaterAssetsUncompleteBossParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,7 +1912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136342080}
   m_Layer: 0
-  m_Name: Mine Level 2 Complete
+  m_Name: MineAssets2ndLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3544,7 +3544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 218204447}
   m_Layer: 0
-  m_Name: Water Level 1 Complete
+  m_Name: WaterAssets1rstLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4343,7 +4343,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -4430,7 +4430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 262673000}
   m_Layer: 0
-  m_Name: Mine Level 1 Complete
+  m_Name: MineAssets1rstLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5273,7 +5273,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -11051,7 +11051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 630449420}
   m_Layer: 0
-  m_Name: Mine Ruined Boss
+  m_Name: MineAssetsUncompleteBossParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12589,7 +12589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699819358}
   m_Layer: 0
-  m_Name: Water Level 2 Complete
+  m_Name: WaterAssets2ndLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13052,7 +13052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730196891}
   m_Layer: 0
-  m_Name: Green Place 1
+  m_Name: ForestAssets1rstLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15718,7 +15718,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -15957,7 +15957,7 @@ GameObject:
   - component: {fileID: 900041832}
   - component: {fileID: 900041833}
   m_Layer: 0
-  m_Name: Ruined Green Place 1
+  m_Name: ForestAssets1rstUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16652,7 +16652,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -18979,6 +18979,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.8000008, y: 2.2166052, z: 0.16000009}
   m_Center: {x: 0.0037540793, y: 1.1083026, z: 0.017290965}
+--- !u!1 &1037410198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1037410199}
+  m_Layer: 0
+  m_Name: Not altered
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1037410199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037410198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1325635246}
+  - {fileID: 257982815}
+  - {fileID: 314949825}
+  - {fileID: 1892725188}
+  - {fileID: 932111787}
+  - {fileID: 891618222}
+  - {fileID: 1526140930}
+  m_Father: {fileID: 1453830285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1039591322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19250,7 +19288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1066108020}
   m_Layer: 0
-  m_Name: Water Ruined Level 1
+  m_Name: WaterAssets1rstUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22310,7 +22348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1263014003}
   m_Layer: 0
-  m_Name: Mine Ruined Level 1
+  m_Name: MineAssets1rstUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22930,7 +22968,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -24118,7 +24156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1402598720}
   m_Layer: 0
-  m_Name: Water Boss Complete
+  m_Name: WaterAssetsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25227,7 +25265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1452846129}
   m_Layer: 0
-  m_Name: Ruined Forest Entrance
+  m_Name: ForestAssetsUncompleteBossParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25285,19 +25323,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1325635246}
-  - {fileID: 257982815}
-  - {fileID: 314949825}
-  - {fileID: 1892725188}
-  - {fileID: 932111787}
-  - {fileID: 891618222}
-  - {fileID: 1526140930}
   - {fileID: 262673000}
   - {fileID: 1263014003}
   - {fileID: 136342080}
   - {fileID: 1804646775}
   - {fileID: 1663168644}
   - {fileID: 630449420}
+  - {fileID: 1037410199}
   m_Father: {fileID: 1017636788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1461587063 stripped
@@ -26288,7 +26320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1497256436}
   m_Layer: 0
-  m_Name: Forest entrance
+  m_Name: ForestAssetsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26534,7 +26566,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -29086,7 +29118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663168644}
   m_Layer: 0
-  m_Name: Mine Level Boss Complete
+  m_Name: MineAssetsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30217,7 +30249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1730017172}
   m_Layer: 0
-  m_Name: Ruined Green Place 2
+  m_Name: ForestAssets2ndUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31757,7 +31789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804646775}
   m_Layer: 0
-  m_Name: Mine Ruined Level 2
+  m_Name: MineAssets2ndUncompleteLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33181,7 +33213,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1453830285}
+    m_TransformParent: {fileID: 1037410199}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3509c28e31f6a0e4cae7f04e064c91f2, type: 3}
       propertyPath: m_LocalScale.x
@@ -34065,7 +34097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1930026394}
   m_Layer: 0
-  m_Name: Green Place 2
+  m_Name: ForestAssets2ndLevelParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
