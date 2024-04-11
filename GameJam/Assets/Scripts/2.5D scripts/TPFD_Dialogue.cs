@@ -16,6 +16,7 @@ public class TPFD_Dialogue : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         textComponent.text = string.Empty;
         StartDialogue();
     }

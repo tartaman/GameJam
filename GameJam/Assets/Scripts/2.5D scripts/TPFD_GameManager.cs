@@ -149,7 +149,7 @@ public class TPFD_GameManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "2.5D Map")
+        if(SceneManager.GetActiveScene().name.Contains("2.5D Map"))
         {
             WorldProps = GameObject.Find("World Props");
 
