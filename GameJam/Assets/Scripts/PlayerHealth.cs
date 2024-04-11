@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [Header("Enemy Health")]
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
-    [SerializeField] FloatingHealthbar healthbar;
+    [Header("Player Health")]
+    [SerializeField] 
+    private float maxHealth;
+    [SerializeField] 
+    private float currentHealth;
+    [SerializeField] 
+    FloatingHealthbar healthbar;
 
     public void Damage(float damageAmount)
     {
-        //animator.SetTrigger("Hit");
         currentHealth -= damageAmount;
 
         healthbar.UpdateHealthBar(currentHealth, maxHealth);
@@ -24,7 +26,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        //animator.SetBool("Death", true);
         Destroy(gameObject);
     }
 
@@ -38,8 +39,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    
+    }
 }
