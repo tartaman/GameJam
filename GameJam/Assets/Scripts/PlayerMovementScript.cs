@@ -44,7 +44,8 @@ public class PlayerMovementScript : MonoBehaviour
     //La gravedad para poderlo regresar a la normalidad cuando deje de presionar espacio
     [SerializeField]
     private float gravityScale = 1f;
-
+    [Header("Animator")]
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb.gravityScale = gravityScale;
         timer = JumpTimer;
         runningVelocity = velocidad * runMult;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -83,15 +85,36 @@ public class PlayerMovementScript : MonoBehaviour
         if (HzM != 0 && isRunning)
         {
             transform.Translate(HzM * runningVelocity * Time.deltaTime, 0, 0);
+            animator.SetBool("IsRunning", true);
         }
         if (HzM != 0 && !isRunning)
         {
+            animator.SetFloat("Horizontal", Math.Abs(HzM));
+            animator.SetBool("IsRunning", false);
             transform.Translate(HzM * velocidad * Time.deltaTime, 0, 0);
         }
+        if (HzM > 0)
+        {
+            transform.localScale = new Vector2(1,1);
+        }
+        if (HzM < 0)
+        {
+            transform.localScale = new Vector2(-1,1);
+        }
+        if (HzM == 0)
+        {
+            animator.SetFloat("Horizontal", HzM);
+        }
+            
+            
     }
     //Saltar, checamos si está en el suelo y le da al boton de saltar
     private void CheckJump()
     {
+        if (isGrounded)
+            animator.SetBool("IsGrounded", true);
+        else
+            animator.SetBool("IsGrounded", false);
         //Que tanto salta segun cuanto tiempo apreta el espacio
         if (isGrounded &&  Input.GetButtonDown("Jump") && ActiveHeldJump)
         { 

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4797098022068052446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.14, z: 0}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.012688756, y: -0.13306558}
@@ -272,8 +272,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  distanciaDeAtaque: 2
+  distanciaDeAtaque: 3
   distanciaParaPerseguir: 10
+  stopWhenReachingSomePoint: 0
+  pointLeft: {x: 0, y: 0}
+  pointRight: {x: 0, y: 0}
   auraExplosiva: {fileID: 8489816722450045438}
   tiempoExplosion: 3
   cooldown: 2
@@ -332,8 +335,8 @@ Transform:
   m_GameObject: {fileID: 8489816722450045438}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.04, y: 0.61, z: 0}
+  m_LocalScale: {x: 1.9762387, y: 1.5730085, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8405636721687561786}

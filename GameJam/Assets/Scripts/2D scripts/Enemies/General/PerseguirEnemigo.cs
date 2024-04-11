@@ -13,12 +13,21 @@ public class PerseguirEnemigo : MonoBehaviour
     protected GameObject player;
     protected bool canFollow = true;
     protected PatrullarEnemigo patrolControler;
-     
+    protected bool rotateWhileAttacking;
+    Animator animator;
+
+    [Header("Opcionales")]
+    [SerializeField] bool stopWhenReachingSomePoint;
+    [SerializeField] Vector2 pointLeft;
+    [SerializeField] Vector2 pointRight;
+
+
     protected virtual void Awake()
     {
+        rotateWhileAttacking = true;
         player = GameObject.FindGameObjectWithTag("Player");
         TryGetComponent<PatrullarEnemigo>(out patrolControler);
-        
+        TryGetComponent(out animator);
     }
 
     protected virtual void Start()
@@ -38,24 +47,34 @@ public class PerseguirEnemigo : MonoBehaviour
     {
         float playerDistance = Vector2.Distance(player.transform.position, transform.position);
         
-
+        
         if(playerDistance <= distanciaParaPerseguir && playerDistance > distanciaDeAtaque)
         {
+            if (stopWhenReachingSomePoint && (transform.position.x < pointLeft.x || transform.position.x > pointRight.x)) {
+                if (animator != null)
+                    animator.SetBool("running", false);
+                return;
+            }
             Vector2 direccion = player.transform.position - transform.position;
-
-           // Debug.Log($"Player X{player.transform.position.x}");
+            if (animator != null)
+                animator.SetBool("running", true);
+            // Debug.Log($"Player X{player.transform.position.x}");
             //Debug.Log($"Enemy X{transform.position.x}");
             //Debug.Log("Atacando");
-            if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+            if (rotateWhileAttacking)
             {
-                transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Derecha");
+                if (player.transform.position.x >= transform.position.x && transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector3(MathF.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    //Debug.Log("Derecha");
+                }
+                else if (player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
+                {
+                    transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    //Debug.Log("Izquierda");
+                }
             }
-            else if(player.transform.position.x < transform.position.x && transform.localScale.x >= 0)
-            {
-                transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
-                //Debug.Log("Izquierda");
-            }
+           
             direccion.Normalize();
             transform.position += new Vector3(direccion.x * speed * Time.deltaTime,0,0);
             
