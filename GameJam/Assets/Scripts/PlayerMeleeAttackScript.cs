@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerMeleeAttackScript : MonoBehaviour
 {
     private Animator animator;
-    private bool isAttacking;
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int meeleDamage = 5;
     public KeyCode AttackKey;
+    private float timer;
+    public float tiempoEntreAtaques = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +22,24 @@ public class PlayerMeleeAttackScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(AttackKey))
+        if (Input.GetKeyDown(AttackKey) && timer <= tiempoEntreAtaques)
         {
-            Attack();
+            StartCoroutine(Attack());
+        }
+        if (timer < tiempoEntreAtaques) 
+        {
+            timer += Time.deltaTime;
+        
+        }
+        if (timer > tiempoEntreAtaques)
+        {
+            timer = 0;
         }
     }
-    void Attack()
+    private IEnumerator Attack()
     {
+        timer = 0;
+        Debug.Log("Attacks");
         //Play attack animation
         animator.SetBool("IsAttacking", true);
         //Detect Enemies inside of attack range
@@ -42,6 +55,8 @@ public class PlayerMeleeAttackScript : MonoBehaviour
             }
             
         }
+        yield return new WaitForSeconds(tiempoEntreAtaques);
+        animator.SetBool("IsAttacking", false);
     }
     private void OnDrawGizmosSelected()
     {
