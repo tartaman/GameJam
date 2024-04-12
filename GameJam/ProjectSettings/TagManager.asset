@@ -8,6 +8,7 @@ TagManager:
   - Hookeable
   - Boss
   - Enemy
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

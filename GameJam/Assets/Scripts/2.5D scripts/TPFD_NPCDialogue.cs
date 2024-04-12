@@ -41,6 +41,7 @@ public class TPFD_NPCDialogue : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         TPFD_Dialogue = DialogueBox.GetComponent<TPFD_Dialogue>();
         Player_RB =  Player.GetComponent<Rigidbody>();
         Player_Controller = Player.GetComponent<TPFD_PlayerController>();
