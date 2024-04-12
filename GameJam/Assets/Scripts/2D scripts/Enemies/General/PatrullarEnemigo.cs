@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-
 public class PatrullarEnemigo : MonoBehaviour
 {
     // Como tal son los puntos máximos a los que puede llegar
