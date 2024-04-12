@@ -472,6 +472,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 35
+  destroyOnCollision: 1
+  timeToDestroy: 0.2
+  hasCooldown: 0
+  coolDown: 0
 --- !u!1 &4015132361458764593
 GameObject:
   m_ObjectHideFlags: 0
