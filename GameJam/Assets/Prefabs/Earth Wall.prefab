@@ -166,3 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
+  destroyOnCollision: 0
+  timeToDestroy: 0
+  hasCooldown: 1
+  coolDown: 0.5

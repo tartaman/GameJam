@@ -1135,10 +1135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GolemCarbon
       objectReference: {fileID: 0}
-    - target: {fileID: 3641243659852874346, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4098550818600712435, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.995836
@@ -1178,18 +1174,6 @@ PrefabInstance:
     - target: {fileID: 4098550818600712435, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4392616865722779776, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4952818351857431985, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7849720661869939569, guid: 704a6beb70fe7a84d923bab00cd0e16c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2051,10 +2035,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 214961575257173850, guid: 632d19c5159b68b4e99f82e120097d64, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2349453012967378976, guid: 632d19c5159b68b4e99f82e120097d64, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -2341,10 +2321,6 @@ PrefabInstance:
       value: EnemigoSuicida
       objectReference: {fileID: 0}
     - target: {fileID: 3991483263855614730, guid: 7621d6ef7b2fa98459d2a45e4522978c, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3991483263855614730, guid: 7621d6ef7b2fa98459d2a45e4522978c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2355,10 +2331,6 @@ PrefabInstance:
     - target: {fileID: 4265804794583944343, guid: 7621d6ef7b2fa98459d2a45e4522978c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7699258172185230142, guid: 7621d6ef7b2fa98459d2a45e4522978c, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
