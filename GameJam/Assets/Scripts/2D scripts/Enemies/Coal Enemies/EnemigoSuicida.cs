@@ -91,19 +91,7 @@ public class EnemigoSuicida : PerseguirEnemigo
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if(animator != null)
-            {
-                canFollow = false;
-                patrolControler.canPatrol = false;
-
-                animator.SetTrigger("suicided");
-                
-            }
-        }
-        */
+        Destroy(gameObject, 0.35f);
     }
 
     /*

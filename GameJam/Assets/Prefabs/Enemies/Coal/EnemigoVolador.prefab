@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 8064726514807504751}
   - component: {fileID: 2574534086863451558}
   - component: {fileID: 3590678362969488897}
+  - component: {fileID: 9019579869618662163}
   m_Layer: 7
   m_Name: EnemigoVolador
   m_TagString: Untagged
@@ -337,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fa2367330f99f46b21bfa2ad637e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLeft: {x: 4.08, y: -0.6, z: 0}
-  pointRight: {x: 9.57, y: -0.6, z: 0}
+  pointLeft: {x: 119.46, y: 38.27, z: 0}
+  pointRight: {x: 128.25, y: 38.27, z: 0}
   speed: 3
   jumpForce: 10
   layerSuelo:
@@ -458,6 +459,19 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbar: {fileID: 6557138463763064082}
+--- !u!114 &9019579869618662163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456778425386894740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc86d7e8efd9ae4cbd7083845a456fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
 --- !u!1 &6981869075755658499
 GameObject:
   m_ObjectHideFlags: 0

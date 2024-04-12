@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: 3345783941410994}
   - component: {fileID: 389284582102581372}
   - component: {fileID: 4811317289460808155}
+  - component: {fileID: -875151343161344668}
   m_Layer: 7
   m_Name: EnemigoSuicida
   m_TagString: Untagged
@@ -458,6 +459,19 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbar: {fileID: 3318525416185446313}
+--- !u!114 &-875151343161344668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991483263855614730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc86d7e8efd9ae4cbd7083845a456fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 35
 --- !u!1 &4015132361458764593
 GameObject:
   m_ObjectHideFlags: 0

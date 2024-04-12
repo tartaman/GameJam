@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4018824214879579577}
   - component: {fileID: 3614842372728585653}
   - component: {fileID: 4864295288622665830}
+  - component: {fileID: 4002059531823297673}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Untagged
@@ -119,3 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34611b661ee566648b03788a8c511b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4002059531823297673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564331237229541115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc86d7e8efd9ae4cbd7083845a456fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
