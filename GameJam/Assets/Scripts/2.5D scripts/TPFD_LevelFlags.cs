@@ -152,9 +152,177 @@ public class TPFD_LevelFlags : MonoBehaviour
                 return;
             }
         }
-    
-    
-    
+
+        if (isWater)
+        {
+            //1rst Level
+            //2nd State
+            if (isLevel1 && !gameManager.isWaterLevel1Completed)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd State
+            if (isLevel1 && gameManager.isWaterLevel1Completed)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+
+            //2nd Level
+            //1rst State
+            if (isLevel2 && !gameManager.isWaterLevel1Completed)
+            {
+                //Debug.Log($"Printing 1rstState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //2nd State
+            if (isLevel2 && gameManager.isWaterLevel1Completed && !gameManager.isWaterLevel2Completed)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd state
+            if (isLevel2 && gameManager.isWaterLevel2Completed)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+
+            //Boss Level
+            //1rst State
+            if (isBoss && !gameManager.isWaterLevel1Completed || !gameManager.isWaterLevel2Completed)
+            {
+                //Debug.Log($"Printing 1rstState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //2nd State
+            if (isBoss && gameManager.isWaterLevel1Completed && gameManager.isWaterLevel2Completed && !gameManager.isWaterBossCompleted)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd state
+            if (isBoss && gameManager.isWaterLevel1Completed && gameManager.isWaterLevel2Completed && gameManager.isWaterBossCompleted)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+        }
+
+        if (isMine)
+        {
+            //1rst Level
+            //2nd State
+            if (isLevel1 && !gameManager.isMineLevel1Completed)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd State
+            if (isLevel1 && gameManager.isMineLevel1Completed)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+
+            //2nd Level
+            //1rst State
+            if (isLevel2 && !gameManager.isMineLevel1Completed)
+            {
+                //Debug.Log($"Printing 1rstState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //2nd State
+            if (isLevel2 && gameManager.isMineLevel1Completed && !gameManager.isMineLevel2Completed)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd state
+            if (isLevel2 && gameManager.isMineLevel2Completed)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+
+            //Boss Level
+            //1rst State
+            if (isBoss && !gameManager.isMineLevel1Completed || !gameManager.isMineLevel2Completed)
+            {
+                //Debug.Log($"Printing 1rstState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //2nd State
+            if (isBoss && gameManager.isMineLevel1Completed && gameManager.isMineLevel2Completed && !gameManager.isMineBossCompleted)
+            {
+                //Debug.Log($"Printing 2ndState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(true);
+                LevelParticlesCompleted.SetActive(false);
+                return;
+            }
+
+            //3rd state
+            if (isBoss && gameManager.isMineLevel1Completed && gameManager.isMineLevel2Completed && gameManager.isMineBossCompleted)
+            {
+                //Debug.Log($"Printing 3rdState particles {this.gameObject.name}");
+
+                LevelParticlesNotCompleted.SetActive(false);
+                LevelParticlesCompleted.SetActive(true);
+                return;
+            }
+        }
+
     }
 
     void CheckForRange()

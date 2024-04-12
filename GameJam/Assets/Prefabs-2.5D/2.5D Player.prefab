@@ -394,5 +394,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goToScene: 109
   goToMainMap: 114
-  goToSceneName: SampleScene
+  TPMain: 112
+  TPForest: 102
+  TPWater: 119
+  TPMine: 109
+  MainMapSpawnpoint: {fileID: 0}
+  ForestSpawnpoint: {fileID: 0}
+  WaterSpawnpoint: {fileID: 0}
+  MineSpawnpoint: {fileID: 0}
+  goToSceneName: 2.5DTest
   goToMainMapName: 2.5D Map
+  Canvas: {fileID: 0}
+  transitionTime: 0

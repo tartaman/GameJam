@@ -12,8 +12,7 @@ public class TPFD_GameManager : MonoBehaviour
     [Header("Game Manager Persistence")]
     [SerializeField] public static TPFD_GameManager gameManagerInstance;
     [SerializeField] public GameObject WorldProps;
-    Transform[] objs;
-
+    [SerializeField] public Transform[] objs;
 
     [Header("Level Complete")]
     public bool isForestLevel1Completed;
@@ -58,7 +57,7 @@ public class TPFD_GameManager : MonoBehaviour
     [SerializeField] public GameObject MineAssets2ndLevelParent;
     [SerializeField] public GameObject MineAssetsParent;
 
-    private GameObject returnGameObjectByName(string Name)
+    public GameObject returnGameObjectByName(string Name)
     {
         foreach(Transform t in objs)
         {
@@ -96,6 +95,7 @@ public class TPFD_GameManager : MonoBehaviour
         MineAssets1rstUncompleteLevelParent = returnGameObjectByName("MineAssets1rstUncompleteLevelParent");
         MineAssets2ndUncompleteLevelParent = returnGameObjectByName("MineAssets2ndUncompleteLevelParent");
         MineAssetsUncompleteBossParent = returnGameObjectByName("MineAssetsUncompleteBossParent");
+
     }
 
     private void setMapLogic()
@@ -144,6 +144,7 @@ public class TPFD_GameManager : MonoBehaviour
 
         gameManagerInstance = this;
         DontDestroyOnLoad(gameObject);
+
     }
 
 

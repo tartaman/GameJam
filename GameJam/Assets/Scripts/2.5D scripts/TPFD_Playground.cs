@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 public class TPFD_Playground : MonoBehaviour
 {
     [Header("Keybinds")]
-    public KeyCode goToScene = KeyCode.M;
+    public KeyCode goToScene = KeyCode.S;
     public KeyCode goToMainMap = KeyCode.R;
-    public KeyCode TPForest = KeyCode.F;
     public KeyCode TPMain = KeyCode.P;
+    public KeyCode TPForest = KeyCode.F;
+    public KeyCode TPWater = KeyCode.W;
+    public KeyCode TPMine = KeyCode.M;
 
     [Header("Spawnpoints")]
     public GameObject MainMapSpawnpoint;
     public GameObject ForestSpawnpoint;
+    public GameObject WaterSpawnpoint;
+    public GameObject MineSpawnpoint;
 
     [Header("Scenes")]
     public string goToSceneName;
@@ -40,7 +44,15 @@ public class TPFD_Playground : MonoBehaviour
         {
             MainMapSpawnpoint = GameObject.Find("MainSpawnpoint");
             ForestSpawnpoint = GameObject.Find("ForestSpawnpoint");
+            WaterSpawnpoint = GameObject.Find("WaterSpawnpoint");
+            MineSpawnpoint = GameObject.Find("MineSpawnpoint");
 
+            Canvas = GameObject.Find("Canvas");
+            canvasAnim = Canvas.GetComponent<Animator>();
+        }
+
+        if(SceneManager.GetActiveScene().name.Contains("Main Menu"))
+        {
             Canvas = GameObject.Find("Canvas");
             canvasAnim = Canvas.GetComponent<Animator>();
         }
@@ -54,12 +66,23 @@ public class TPFD_Playground : MonoBehaviour
 
         if(Input.GetKeyDown(goToScene))
         {
-            StartCoroutine(LoadLevel(goToSceneName));
+            if(SceneManager.GetActiveScene().buildIndex != SceneManager.GetSceneByName(goToSceneName).buildIndex)
+            {
+                StartCoroutine(LoadLevel(goToSceneName));
+
+            }
+
         }
 
         if (Input.GetKeyDown(goToMainMap))
         {
-            StartCoroutine(LoadLevel(goToMainMapName));
+            Debug.Log($"Load Main map 1 {SceneManager.GetActiveScene().buildIndex} != {SceneManager.GetSceneByName(goToMainMapName).buildIndex}");
+
+            if (SceneManager.GetActiveScene().buildIndex != SceneManager.GetSceneByName(goToMainMapName).buildIndex)
+            {
+                
+                StartCoroutine(LoadLevel(goToMainMapName));
+            }
         }
     }
 
@@ -75,9 +98,19 @@ public class TPFD_Playground : MonoBehaviour
         {
             StartCoroutine(LoadTP(MainMapSpawnpoint.transform));
         }
+
+        if(Input.GetKeyDown(TPWater))
+        {
+            StartCoroutine(LoadTP(WaterSpawnpoint.transform));
+        }
+
+        if (Input.GetKeyDown(TPMine))
+        {
+            StartCoroutine(LoadTP(MineSpawnpoint.transform));
+        }
     }
 
-    IEnumerator LoadLevel(string sceneName)
+    public IEnumerator LoadLevel(string sceneName)
     {
         canvasAnim.SetTrigger("Start");
 
@@ -86,7 +119,7 @@ public class TPFD_Playground : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator LoadTP(Transform t)
+    public IEnumerator LoadTP(Transform t)
     {
         canvasAnim.SetTrigger("Start");
         canvasAnim.SetTrigger("End");
