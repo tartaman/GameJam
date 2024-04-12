@@ -7668,7 +7668,7 @@ Transform:
   m_GameObject: {fileID: 733562089}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.1, y: 27, z: -10}
+  m_LocalPosition: {x: -7.4, y: 41.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8362,7 +8362,7 @@ GameObject:
   - component: {fileID: 1148448164}
   - component: {fileID: 1148448163}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: GridParedes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10466,7 +10466,7 @@ Transform:
   m_GameObject: {fileID: 1320408960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 102.1, y: 27, z: -10}
+  m_LocalPosition: {x: -7.39752, y: 40.373856, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10821,11 +10821,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207053570333632748, guid: 9f7ef3d7e55c58a4cbaf1d7fdca3182b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.1
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 1207053570333632748, guid: 9f7ef3d7e55c58a4cbaf1d7fdca3182b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27
+      value: 41.9
       objectReference: {fileID: 0}
     - target: {fileID: 1207053570333632748, guid: 9f7ef3d7e55c58a4cbaf1d7fdca3182b, type: 3}
       propertyPath: m_LocalPosition.z
