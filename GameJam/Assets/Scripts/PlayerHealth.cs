@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Destroy(gameObject);
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     // Start is called before the first frame update

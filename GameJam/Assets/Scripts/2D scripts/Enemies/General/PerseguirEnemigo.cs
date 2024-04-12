@@ -14,7 +14,7 @@ public class PerseguirEnemigo : MonoBehaviour
     protected bool canFollow = true;
     protected PatrullarEnemigo patrolControler;
     protected bool rotateWhileAttacking;
-    Animator animator;
+    Animator animatorr;
 
     [Header("Opcionales")]
     [SerializeField] bool stopWhenReachingSomePoint;
@@ -27,7 +27,7 @@ public class PerseguirEnemigo : MonoBehaviour
         rotateWhileAttacking = true;
         player = GameObject.FindGameObjectWithTag("Player");
         TryGetComponent<PatrullarEnemigo>(out patrolControler);
-        TryGetComponent(out animator);
+        TryGetComponent(out animatorr);
     }
 
     protected virtual void Start()
@@ -51,13 +51,13 @@ public class PerseguirEnemigo : MonoBehaviour
         if(playerDistance <= distanciaParaPerseguir && playerDistance > distanciaDeAtaque)
         {
             if (stopWhenReachingSomePoint && (transform.position.x < pointLeft.x || transform.position.x > pointRight.x)) {
-                if (animator != null)
-                    animator.SetBool("running", false);
+                if (animatorr != null)
+                    animatorr.SetBool("running", false);
                 return;
             }
             Vector2 direccion = player.transform.position - transform.position;
-            if (animator != null)
-                animator.SetBool("running", true);
+            if (animatorr != null)
+                animatorr.SetBool("running", true);
             // Debug.Log($"Player X{player.transform.position.x}");
             //Debug.Log($"Enemy X{transform.position.x}");
             //Debug.Log("Atacando");
