@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TPFD_LevelFlags : MonoBehaviour
 {
     [Header("GameManager Reference")]
     private TPFD_GameManager gameManager;
+
+    [Header("Enter Level Box")]
+    public GameObject EnterLevelBox;
+    public GameObject EnterLevelYesButton;
+    public GameObject EnterLevelNoButton;
 
     [Header("Values for interaction")]
     public float distance;
@@ -30,6 +37,7 @@ public class TPFD_LevelFlags : MonoBehaviour
     public bool isLevel1;
     public bool isLevel2;
     public bool isBoss;
+    public bool isMainMap;
 
     private void Awake()
     {
@@ -322,7 +330,6 @@ public class TPFD_LevelFlags : MonoBehaviour
                 return;
             }
         }
-
     }
 
     void CheckForRange()
@@ -333,6 +340,12 @@ public class TPFD_LevelFlags : MonoBehaviour
         if(isInRange)
         {
             textAboveFlag.text = $"Press {playerController.Talk} to interact.";
+
+            if (isMainMap)
+            {
+                textAboveFlag.text = $"Press {playerController.Talk} to go back to main map.";
+            }
+
             textAboveFlag.alpha = 100;
         }
         else
@@ -346,6 +359,47 @@ public class TPFD_LevelFlags : MonoBehaviour
         }
     }
 
+    void LoadLevel1()
+    {
+        SceneManager.LoadScene("Nivel1Carbon");
+    }
+
+    void EnterLevelDialogue(string WorldName, int MessageIndex)
+    {
+        string notAvailable = $"{WorldName} is not available yet...";
+        string Available = $"Would you like to challenge {WorldName}?";
+
+        if (MessageIndex >= EnterLevelBox.GetComponent<TPFD_EnterLevel>().messages.Length)
+        {
+            MessageIndex = 0;
+        }
+
+        EnterLevelBox.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        Player.GetComponent<TPFD_PlayerController>().isTalking = true;
+
+        if(WorldName.Contains("Mine") && isLevel1)
+        {
+            MessageIndex = 1;
+            GameObject.Find("Enter level").GetComponent<TextMeshProUGUI>().text = Available;
+            EnterLevelNoButton.SetActive(true);
+            EnterLevelYesButton.transform.localPosition = new Vector3(800, -700);
+
+            EnterLevelYesButton.GetComponent<Button>().onClick.AddListener(LoadLevel1);
+        }
+        else
+        {
+            MessageIndex = 0;
+            GameObject.Find("Enter level").GetComponent<TextMeshProUGUI>().text = notAvailable;
+            EnterLevelNoButton.SetActive(false);
+            EnterLevelYesButton.transform.localPosition = new Vector3(-6, -706);
+        }
+        GameObject.Find("Subtext level").GetComponent<TextMeshProUGUI>().text = EnterLevelBox.GetComponent<TPFD_EnterLevel>().messages[MessageIndex];
+
+    }
+
     void AskToEnterLevel()
     {
 
@@ -354,9 +408,11 @@ public class TPFD_LevelFlags : MonoBehaviour
             if (isLevel1 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Forest Level 1");
+
+                EnterLevelDialogue("Forest Lv 1", 0);
             }
 
-            if(isLevel1 && LevelParticlesCompleted.activeSelf)
+            if (isLevel1 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
             }
@@ -364,26 +420,36 @@ public class TPFD_LevelFlags : MonoBehaviour
             if (isLevel2 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Forest Level 2");
+
+                EnterLevelDialogue("Forest Lv 2", 0);
             }
 
-            if(isLevel2 && !LevelParticlesNotCompleted.activeSelf)
+            if (isLevel2 && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Forest Level 1 before entering this level");
+
+                EnterLevelDialogue("Forest Lv 2", 0);
             }
 
             if (isLevel2 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
+
+                EnterLevelDialogue("Forest Lv 2", 0);
             }
 
             if (isBoss && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Forest Boss");
+
+                EnterLevelDialogue("Forest Boss", 0);
             }
 
-            if(isBoss && !LevelParticlesNotCompleted.activeSelf)
+            if (isBoss && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Forest Level 1 and 2 before challenging the boss");
+
+                EnterLevelDialogue("Forest Boss", 0);
             }
 
             if (isBoss && LevelParticlesCompleted.activeSelf)
@@ -397,41 +463,57 @@ public class TPFD_LevelFlags : MonoBehaviour
             if (isLevel1 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Water Level 1");
+
+                EnterLevelDialogue("Water Lv 1", 0);
             }
 
             if (isLevel1 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
+
+                EnterLevelDialogue("Water Lv 1", 0);
             }
 
             if (isLevel2 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Water Level 2");
+
+                EnterLevelDialogue("Water Lv 2", 0);
             }
 
             if (isLevel2 && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Water Level 1 before entering this level");
+
+                EnterLevelDialogue("Water Lv 2", 0);
             }
 
             if (isLevel2 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
+
+                EnterLevelDialogue("Water Lv 2", 0);
             }
 
             if (isBoss && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Water Boss");
+
+                EnterLevelDialogue("Water Boss", 0);
             }
 
             if (isBoss && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Water Level 1 and 2 before challenging the boss");
+
+                EnterLevelDialogue("Water Boss", 0);
             }
 
             if (isBoss && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this world.");
+
+                EnterLevelDialogue("Water Boss", 0);
             }
         }
 
@@ -440,42 +522,55 @@ public class TPFD_LevelFlags : MonoBehaviour
             if (isLevel1 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Mine Level 1");
+                EnterLevelDialogue("Mine Lv 1", 1);
             }
 
             if (isLevel1 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
+                EnterLevelDialogue("Mine Lv 1", 1);
             }
 
             if (isLevel2 && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Mine Level 2");
+                EnterLevelDialogue("Mine Lv 2", 0);
             }
 
             if (isLevel2 && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Mine Level 1 before entering this level");
+                EnterLevelDialogue("Mine Lv 2", 0);
             }
 
             if (isLevel2 && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this level.");
+                EnterLevelDialogue("Mine Lv 2", 0);
             }
 
             if (isBoss && LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("Entering Mine Boss");
+                EnterLevelDialogue("Mine Boss", 0);
             }
 
             if (isBoss && !LevelParticlesNotCompleted.activeSelf)
             {
                 Debug.Log("You must clear Mine Level 1 and 2 before challenging the boss");
+                EnterLevelDialogue("Mine Boss", 0);
             }
 
             if (isBoss && LevelParticlesCompleted.activeSelf)
             {
                 Debug.Log("You have already cleared this world.");
+                EnterLevelDialogue("Mine Boss", 0);
             }
+        }
+
+        if (isMainMap)
+        {
+            StartCoroutine(Player.GetComponent<TPFD_Playground>().LoadTP(Player.GetComponent<TPFD_Playground>().MainMapSpawnpoint.transform));
         }
     }
 

@@ -58,7 +58,14 @@ public class PauseMenu : MonoBehaviour
 
     public void onPressingMainMenu()
     {
-        StartCoroutine(GameObject.FindGameObjectWithTag("Player").GetComponent<TPFD_Playground>().LoadLevel("Main Menu"));
+        if(SceneManager.GetActiveScene().name == "Nivel1Carbon")
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            StartCoroutine(GameObject.FindGameObjectWithTag("Player").GetComponent<TPFD_Playground>().LoadLevel("Main Menu"));
+        }
     }
 
     public void onPressingSettings()

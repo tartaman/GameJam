@@ -13,6 +13,7 @@ public class TPFD_Dialogue : MonoBehaviour
     public GameObject Player;
 
     public int index;
+    public bool HasFinishedTalking;
 
     void Start()
     {
@@ -68,14 +69,15 @@ public class TPFD_Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
+            HasFinishedTalking = false;
             StartCoroutine(TypeLine());
-
         }
         else
         {
             Player.GetComponent<TPFD_PlayerController>().isTalking = false;
             index = 0;
             textComponent.text = string.Empty;
+            HasFinishedTalking = true;
             gameObject.SetActive(false);
 
         }
