@@ -18981,7 +18981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7490383423050472600, guid: e6a4f6e995c37384fa43d1a0fec362ec, type: 3}
       propertyPath: moveSpeed
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8738359484426332551, guid: e6a4f6e995c37384fa43d1a0fec362ec, type: 3}
       propertyPath: m_Name
@@ -52558,6 +52558,7 @@ GameObject:
   - component: {fileID: 1798912315}
   - component: {fileID: 1798912314}
   - component: {fileID: 1798912316}
+  - component: {fileID: 1798912317}
   m_Layer: 0
   m_Name: Water NPC
   m_TagString: Untagged
@@ -52667,6 +52668,27 @@ MonoBehaviour:
   isYellowHouseNPC: 0
   isHospitalHouseNPC: 0
   isGreenHouseNPC: 0
+--- !u!65 &1798912317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798912313}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 30.359999, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1799168320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 24ecc5bb467b3fe4b9c1660c3678ef90, type: 3}
