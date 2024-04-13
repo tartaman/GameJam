@@ -44023,11 +44023,16 @@ MonoBehaviour:
   GameManager: {fileID: 370918998}
   TPFD_GameManager: {fileID: 370918999}
   lines:
-  - Test Green 1
+  - 'Here you have the recycle center, my father is the owner. '
+  - It's a shame that almost no one comes here...
   lines2:
-  - Test Green 2
+  - Some people have started bringing their waste here instead of throwing it in
+    the trash or the river. .
+  - I'm sure that we can put them to great use and we can reduce pollution
   lines3:
-  - Test Green 3
+  - 'I have never seen the recycle center so full! Now my father has started creating
+    some containers with the bottles some people brings. '
+  - This will surely reduce the plastic is produced.
   textSpeed: 0.05
   isForestNPC: 0
   isWaterNPC: 0
@@ -46132,11 +46137,14 @@ MonoBehaviour:
   GameManager: {fileID: 370918998}
   TPFD_GameManager: {fileID: 370918999}
   lines:
-  - Test Yellow House 1
+  - 'This town used to be quiet when I was young. '
+  - But now, with those annoying companies building everywhere, even the animals
+    have left these corners.
   lines2:
-  - Test Yellow House 2
+  - 'I guess it was my imagination, but I think I heard a bird singing in the morning. '
+  - I missed them a lot.
   lines3:
-  - Test Yellow House 3
+  - The town is a lot cleaner and the air seems fresher, just as I remembered...
   textSpeed: 0.055
   isForestNPC: 0
   isWaterNPC: 0
